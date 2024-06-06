@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -42,13 +41,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.ImageLoader
 import coil.compose.AsyncImage
-import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 import com.example.apppokemon.model.Pokemon
 import com.example.apppokemon.ui.theme.AppPokemonTheme
-import com.example.apppokemon.viewmodel.PokemonsViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -162,14 +158,6 @@ fun CardPokemons(pokemon: Pokemon, number: String) {
                     .fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
-            //Text(
-            //    text = pokemon.url,
-            //    modifier = Modifier
-            //        .padding(bottom = 12.dp)
-            //        .fillMaxWidth(),
-            //    textAlign = TextAlign.Center
-            //)
-
             if (expanded) {
                 val pokemonsViewModel: PokemonsViewModel = viewModel()
 
@@ -231,5 +219,4 @@ fun CardPokemons(pokemon: Pokemon, number: String) {
             }
         }
     }
-
 }

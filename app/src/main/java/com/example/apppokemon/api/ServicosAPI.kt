@@ -14,8 +14,7 @@ interface ServicosAPI {
     ): Pokemons
 
     @GET("pokemon/{id}/")
-    suspend fun getPokemonsImage(
+    suspend fun getPokemonsPesoAltura(
         @Path("id") id: String?
     ): Sprites
-
 }

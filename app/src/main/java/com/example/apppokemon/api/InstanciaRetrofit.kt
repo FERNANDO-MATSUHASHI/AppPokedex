@@ -15,12 +15,12 @@ object InstanciaRetrofit {
         retrofit.create(ServicosAPI::class.java)
     }
 
-    // API para Imagem
-    private val ENDERECO_DA_API_IMAGEM = "https://pokeapi.co/api/v2/"
+    // API para Peso e Altura
+    private val ENDERECO_DA_API_PESO_ALURA = "https://pokeapi.co/api/v2/"
 
     val apiPesoAltura: ServicosAPI by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl(ENDERECO_DA_API_IMAGEM)
+            .baseUrl(ENDERECO_DA_API_PESO_ALURA)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         retrofit.create(ServicosAPI::class.java)

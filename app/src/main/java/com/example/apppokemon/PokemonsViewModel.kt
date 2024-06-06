@@ -1,4 +1,4 @@
-package com.example.apppokemon.viewmodel
+package com.example.apppokemon
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -32,7 +32,7 @@ class PokemonsViewModel : ViewModel() {
     fun obterPokemonPesoAltura(number: String) {
         viewModelScope.launch {
             try {
-                val responsePesoAltura = InstanciaRetrofit.apiPesoAltura.getPokemonsImage(number)
+                val responsePesoAltura = InstanciaRetrofit.apiPesoAltura.getPokemonsPesoAltura(number)
                 pokemonsPeso.value = responsePesoAltura.height.toString()
                 pokemonsAltura.value = responsePesoAltura.weight.toString()
                 println("API Call Peso - ${pokemonsPeso.value}")
